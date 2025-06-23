@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPhoenix - Next-Gen Cryptocurrency Mining</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 50%, #22d3ee 100%);
+        }
+        .mining-animation {
+            position: relative;
+            overflow: hidden;
+        }
+        .mining-animation::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            animation: pulse 4s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+            100% { transform: scale(0.8); opacity: 0.5; }
+        }
+        .coin-spin {
+            animation: spin 6s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- Navigation -->
+    <nav class="gradient-bg sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-fire text-yellow-400 text-2xl"></i>
+                <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">CryptoPhoenix</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-yellow-300 transition">Home</a>
+                <a href="#features" class="hover:text-yellow-300 transition">Features</a>
+                <a href="#mining" class="hover:text-yellow-300 transition">Mining</a>
+                <a href="#stats" class="hover:text-yellow-300 transition">Stats</a>
+                <a href="#contact" class="hover:text-yellow-300 transition">Contact</a>
+            </div>
+            <button class="md:hidden text-xl" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-blue-900 w-full" id="mobileMenu">
+            <div class="flex flex-col space-y-3 p-4">
+                <a href="#home" class="hover:text-yellow-300 transition">Home</a>
+                <a href="#features" class="hover:text-yellow-300 transition">Features</a>
+                <a href="#mining" class="hover:text-yellow-300 transition">Mining</a>
+                <a href="#stats" class="hover:text-yellow-300 transition">Stats</a>
+                <a href="#contact" class="hover:text-yellow-300 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Rise From The Ashes With <span class="text-yellow-400">CryptoPhoenix</span></h1>
+                <p class="text-xl mb-8 text-gray-200">The most efficient cloud mining platform powered by renewable energy. Mine Bitcoin, Ethereum, and other cryptocurrencies with zero upfront hardware costs.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition transform hover:scale-105">
+                        Start Mining Now <i class="fas fa-chevron-right ml-2"></i>
+                    </button>
+                    <button class="border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-gray-900 font-bold py-3 px-6 rounded-lg transition transform hover:scale-105">
+                        Learn More <i class="fas fa-info-circle ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-blue-500 rounded-full opacity-20 blur-xl"></div>
+                    <div class="relative mining-animation bg-gray-800 rounded-full flex items-center justify-center w-full h-full">
+                        <div class="coin-spin w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-coins text-5xl md:text-6xl text-gray-900"></i>
+                        </div>
+                        <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 px-4 py-2 rounded-lg shadow-lg">
+                            <span class="text-yellow-400 font-bold">24/7 Mining</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Why Choose <span class="text-yellow-400">CryptoPhoenix</span>?</h2>
+            <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12">We combine cutting-edge technology with sustainable energy solutions to deliver the most efficient mining experience.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-6 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition">
+                    <div class="text-blue-400 text-4xl mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Green Energy</h3>
+                    <p class="text-gray-300">Our mining farms are powered by 100% renewable energy sources, reducing the carbon footprint of cryptocurrency mining.</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition">
+                    <div class="text-blue-400 text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">High Efficiency</h3>
+                    <p class="text-gray-300">With our optimized ASIC and GPU farms, we achieve industry-leading hash rates with minimal energy consumption.</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition">
+                    <div class="text-blue-400 text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Secure & Reliable</h3>
+                    <p class="text-gray-300">Military-grade security protocols ensure your mining rewards are always safe and withdrawals are processed instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mining Dashboard -->
+    <section id="mining" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Start <span class="text-yellow-400">Mining</span> Today</h2>
+            <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12">Choose your mining plan and start earning cryptocurrency without any hardware setup.</p>
+            
+            <div class="bg-gray-800 rounded-xl p-6 max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 mb-6 md:mb-0 md:pr-6">
+                        <h3 class="text-xl font-bold mb-4">Mining Calculator</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-300 mb-2">Cryptocurrency</label>
+                                <select class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3">
+                                    <option>Bitcoin (BTC)</option>
+                                    <option>Ethereum (ETH)</option>
+                                    <option>Litecoin (LTC)</option>
+                                    <option>Monero (XMR)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2">Hash Power (TH/s)</label>
+                                <input type="range" min="10" max="1000" value="100" class="w-full" id="hashSlider">
+                                <div class="flex justify-between mt-2">
+                                    <span class="text-gray-400">10 TH/s</span>
+                                    <span class="font-bold text-yellow-400" id="hashValue">100 TH/s</span>
+                                    <span class="text-gray-400">1000 TH/s</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2">Contract Duration</label>
+                                <div class="flex space-x-2">
+                                    <button class="bg-blue-600 px-4 py-2 rounded-lg">1 Month</button>
+                                    <button class="bg-gray-700 hover:bg-blue-600 px-4 py-2 rounded-lg">6 Months</button>
+                                    <button class="bg-gray-700 hover:bg-blue-600 px-4 py-2 rounded-lg">1 Year</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-gray-700 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-4">Estimated Earnings</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-300">Daily Earnings:</span>
+                                <span class="font-bold">0.00042 BTC</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-300">Weekly Earnings:</span>
+                                <span class="font-bold">0.00294 BTC</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-300">Monthly Earnings:</span>
+                                <span class="font-bold">0.0126 BTC</span>
+                            </div>
+                            <div class="flex justify-between border-t border-gray-600 pt-3">
+                                <span class="text-gray-300">Maintenance Fee:</span>
+                                <span class="text-red-400">-0.0005 BTC</span>
+                            </div>
+                            <div class="flex justify-between border-t border-gray-600 pt-3">
+                                <span class="text-lg font-bold">Net Profit:</span>
+                                <span class="text-yellow-400 font-bold">0.0121 BTC</span>
+                            </div>
+                            <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg mt-4 transition">
+                                Purchase Mining Contract
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-16 gradient-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our <span class="text-yellow-400">Mining</span> Power</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-gray-900 bg-opacity-40 p-6 rounded-xl backdrop-blur-sm">
+                    <div class="text-4xl font-bold text-yellow-400 mb-2" id="hashRate">350</div>
+                    <div class="text-gray-300">PH/s Hash Rate</div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-40 p-6 rounded-xl backdrop-blur-sm">
+                    <div class="text-4xl font-bold text-yellow-400 mb-2" id="miners">12,540</div>
+                    <div class="text-gray-300">Active Miners</div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-40 p-6 rounded-xl backdrop-blur-sm">
+                    <div class="text-4xl font-bold text-yellow-400 mb-2" id="countries">78</div>
+                    <div class="text-gray-300">Countries</div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-40 p-6 rounded-xl backdrop-blur-sm">
+                    <div class="text-4xl font-bold text-yellow-400 mb-2" id="uptime">99.9%</div>
+                    <div class="text-gray-300">Uptime</div>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-4xl mx-auto bg-gray-900 bg-opacity-40 rounded-xl p-6 backdrop-blur-sm">
+                <h3 class="text-xl font-bold mb-4">Real-time Mining Statistics</h3>
+                <div class="h-64 bg-gray-800 rounded-lg flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-chart-bar text-5xl text-blue-400 mb-4"></i>
+                        <p class="text-gray-300">Live mining data visualization would appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our <span class="text-yellow-400">Miners</span> Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-xl font-bold mr-4">JD</div>
+                        <div>
+                            <h4 class="font-bold">John D.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"I've tried several cloud mining services, but CryptoPhoenix stands out with its transparency and consistent payouts. The renewable energy aspect was the clincher for me."</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-xl font-bold mr-4">SM</div>
+                        <div>
+                            <h4 class="font-bold">Sarah M.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"The user interface is incredibly intuitive, and their customer support is responsive. I've been able to scale my mining operation easily as I learned more."</p>
+                </div>
+                
+                <div class="bg-gray-900 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-xl font-bold mr-4">AK</div>
+                        <div>
+                            <h4 class="font-bold">Alex K.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"As someone concerned about crypto's environmental impact, I was thrilled to find CryptoPhoenix. Their commitment to green energy is genuine and verifiable."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Get In <span class="text-yellow-400">Touch</span></h2>
+            <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12">Have questions? Our team is available 24/7 to assist you with your mining journey.</p>
+            
+            <div class="max-w-4xl mx-auto bg-gray-800 rounded-xl overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 p-8 gradient-bg text-white">
+                        <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-4 text-yellow-400"></i>
+                                <div>
+                                    <h4 class="font-bold">Address</h4>
+                                    <p class="text-gray-200">N0 53 Oke Amu Avenue, Governors Road, Ikotun Lagos, Nigeria.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-4 text-yellow-400"></i>
+                                <div>
+                                    <h4 class="font-bold">Email</h4>
+                                    <p class="text-gray-200">cyberphoenix580@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-4 text-yellow-400"></i>
+                                <div>
+                                    <h4 class="font-bold">Phone</h4>
+                                    <p class="text-gray-200">+234 9167645567</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-900 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://github.com/Cyberphoenix518" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-8">
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-gray-300 mb-2">Name</label>
+                                <input type="text" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-300 mb-2">Email</label>
+                                <input type="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-300 mb-2">Subject</label>
+                                <input type="text" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-300 mb-2">Message</label>
+                                <textarea rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition">
+                                Send Message <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fas fa-fire text-yellow-400 text-2xl"></i>
+                    <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">CryptoPhoenix</span>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    &copy; 2023 CryptoPhoenix. All rights reserved.
+                </div>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Hash power slider
+        const hashSlider = document.getElementById('hashSlider');
+        const hashValue = document.getElementById('hashValue');
+        
+        hashSlider.addEventListener('input', () => {
+            hashValue.textContent = `${hashSlider.value} TH/s`;
+        });
+        
+        // Animated stats counter
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // Start counters when stats section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue('hashRate', 0, 350, 2000);
+                    animateValue('miners', 0, 12540, 2000);
+                    animateValue('countries', 0, 78, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.5});
+        
+        observer.observe(document.getElementById('stats'));
+    </script>
+</body>
+</html>
